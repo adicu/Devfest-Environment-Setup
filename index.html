@@ -2,9 +2,9 @@
 <html>
 
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Devfest Environment Setup : Our Devfest 2014 environment setup files" />
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Devfest Environment Setup : Our Devfest 2014 environment setup files">
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -16,14 +16,14 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/squidarth/Devfest-Environment-Setup">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/adicu/Devfest-Environment-Setup">View on GitHub</a>
 
           <h1 id="project_title">Devfest Environment Setup</h1>
           <h2 id="project_tagline">Our Devfest 2014 environment setup files</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/squidarth/Devfest-Environment-Setup/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/squidarth/Devfest-Environment-Setup/tarball/master">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/adicu/Devfest-Environment-Setup/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/adicu/Devfest-Environment-Setup/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
@@ -32,10 +32,10 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="devfest-environment-setup" class="anchor" href="#devfest-environment-setup"><span class="octicon octicon-link"></span></a>Devfest Environment Setup</h1>
+<a id="devfest-environment-setup" class="anchor" href="#devfest-environment-setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Devfest Environment Setup</h1>
 
 <h3>
-<a name="motivation" class="anchor" href="#motivation"><span class="octicon octicon-link"></span></a>Motivation</h3>
+<a id="motivation" class="anchor" href="#motivation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Motivation</h3>
 
 <p>During Devfest this year, we will be using a piece of software called
 Vagrant for our development.  Vagrant allows users to really easily manage
@@ -50,13 +50,13 @@ of whether you run a PC or a Mac, you can be up and running as soon as you have
 Vagrant installed.</p>
 
 <h3>
-<a name="a-note-on-writing-code" class="anchor" href="#a-note-on-writing-code"><span class="octicon octicon-link"></span></a>A Note on Writing Code</h3>
+<a id="a-note-on-writing-code" class="anchor" href="#a-note-on-writing-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>A Note on Writing Code</h3>
 
 <p>All programmers have a text editor that they use to write code.  If you're just
 getting started, we highly recommend you download and install <a href="http://www.sublimetext.com/2">Sublime Text</a>.</p>
 
 <h3>
-<a name="opening-up-terminal-mac-only" class="anchor" href="#opening-up-terminal-mac-only"><span class="octicon octicon-link"></span></a>Opening up Terminal (Mac only)</h3>
+<a id="opening-up-terminal-mac-only" class="anchor" href="#opening-up-terminal-mac-only" aria-hidden="true"><span class="octicon octicon-link"></span></a>Opening up Terminal (Mac only)</h3>
 
 <p>Terminal is going to be where most of our development-related software will
 be running.  Simply use Spotlight to open it up</p>
@@ -64,13 +64,13 @@ be running.  Simply use Spotlight to open it up</p>
 <p><img src="http://squidarth.github.io/static/open_terminal.png" alt="terminal open"></p>
 
 <h2>
-<a name="open-up-command-prompt-pc-only" class="anchor" href="#open-up-command-prompt-pc-only"><span class="octicon octicon-link"></span></a>Open up Command Prompt (PC only)</h2>
+<a id="open-up-command-prompt-pc-only" class="anchor" href="#open-up-command-prompt-pc-only" aria-hidden="true"><span class="octicon octicon-link"></span></a>Open up Command Prompt (PC only)</h2>
 
 <p>The PC equivalent of Terminal is a program called "Command Prompt".  To open it,
 click the "Start Menu", navigate to "Accessories", and click "Command Prompt"</p>
 
 <h3>
-<a name="installing-git" class="anchor" href="#installing-git"><span class="octicon octicon-link"></span></a>Installing Git</h3>
+<a id="installing-git" class="anchor" href="#installing-git" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Git</h3>
 
 <p>Git is necessary on both Mac and PC to get environments set up.  First, check
 if it has been installed already by loading up Terminal and typing
@@ -83,7 +83,7 @@ If git is installed, you should see the following output:</p>
 there are more instructions.</p>
 
 <h3>
-<a name="pc-instructions" class="anchor" href="#pc-instructions"><span class="octicon octicon-link"></span></a>PC Instructions</h3>
+<a id="pc-instructions" class="anchor" href="#pc-instructions" aria-hidden="true"><span class="octicon octicon-link"></span></a>PC Instructions</h3>
 
 <p>On PCs there are a couple extra steps in installing git that you should be
 aware of.</p>
@@ -106,7 +106,7 @@ and type <code>git</code>.  You should see the following output:</p>
 <p><img src="http://squidarth.github.io/static/git_successful_msft.PNG" alt="git install"></p>
 
 <h3>
-<a name="installing-virtualbox" class="anchor" href="#installing-virtualbox"><span class="octicon octicon-link"></span></a>Installing VirtualBox</h3>
+<a id="installing-virtualbox" class="anchor" href="#installing-virtualbox" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing VirtualBox</h3>
 
 <p>To make development simpler, we will be doing our development in a Virtual Machine.
 The simplest way to do this is by using a piece of software called <a href="http://vagrantup.com">vagrant</a>.
@@ -120,7 +120,7 @@ and download the version for your operating system.</p>
 <p><img src="http://squidarth.github.io/static/virtualbox_installer-2.png" alt="virtualbox installer"></p>
 
 <h3>
-<a name="installing-vagrant" class="anchor" href="#installing-vagrant"><span class="octicon octicon-link"></span></a>Installing Vagrant</h3>
+<a id="installing-vagrant" class="anchor" href="#installing-vagrant" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing Vagrant</h3>
 
 <p>Next, we need to install Vagrant, which is an easy way to manage VirtualBox
 Virutal Machines.  To do this, visit the <a href="http://www.vagrantup.com/downloads.html">Vagrant website</a>
@@ -137,7 +137,7 @@ and install the appropriate version for your Operating System.</p>
 <p>If you see this, then you're ready to start developing!</p>
 
 <h3>
-<a name="basic-terminal-use" class="anchor" href="#basic-terminal-use"><span class="octicon octicon-link"></span></a>Basic Terminal Use</h3>
+<a id="basic-terminal-use" class="anchor" href="#basic-terminal-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Terminal Use</h3>
 
 <p>The next couple steps will require knowing a few terminal commands.  The terminal
 is often called the "Command Line", and we'll be using that terminology for the
@@ -145,7 +145,7 @@ rest of this short guide.  In order to execute commands in the command line (whi
 you have already done a couple times), type the command and then hit "enter".</p>
 
 <h4>
-<a name="mac" class="anchor" href="#mac"><span class="octicon octicon-link"></span></a>Mac</h4>
+<a id="mac" class="anchor" href="#mac" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mac</h4>
 
 <p>When you are using the command line, you are always in a certain directory.  To
 check the directory you are in, simply run <code>pwd</code>.</p>
@@ -163,7 +163,7 @@ directory (the directory where your Documents directory is).</p>
 <p><img src="http://squidarth.github.io/static/cd_usage-2.png" alt="cd usage"></p>
 
 <h4>
-<a name="pc" class="anchor" href="#pc"><span class="octicon octicon-link"></span></a>PC</h4>
+<a id="pc" class="anchor" href="#pc" aria-hidden="true"><span class="octicon octicon-link"></span></a>PC</h4>
 
 <p>On PCs, similarly to Mac, in the command prompt, you are always in a certain directory,
 and the path is listed in your prompt, so you always know what directory you
@@ -176,7 +176,7 @@ Note that on PCs, <code>\</code> is used in writing out directory paths, rather 
 <p><code>dir</code> is used to list files and directories inside folders.</p>
 
 <h3>
-<a name="getting-started-with-vagrant" class="anchor" href="#getting-started-with-vagrant"><span class="octicon octicon-link"></span></a>Getting started with Vagrant</h3>
+<a id="getting-started-with-vagrant" class="anchor" href="#getting-started-with-vagrant" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started with Vagrant</h3>
 
 <p>Now you should be ready to get started using Vagrant to do some web development.</p>
 
@@ -231,7 +231,7 @@ folder on your computer are available on this virtual machine.</p>
 commands should be your first line of defense if anything seems to be going wrong.</p>
 
 <h3>
-<a name="remarks-on-vagrant-usage-optional" class="anchor" href="#remarks-on-vagrant-usage-optional"><span class="octicon octicon-link"></span></a>Remarks on Vagrant Usage (Optional)</h3>
+<a id="remarks-on-vagrant-usage-optional" class="anchor" href="#remarks-on-vagrant-usage-optional" aria-hidden="true"><span class="octicon octicon-link"></span></a>Remarks on Vagrant Usage (Optional)</h3>
 
 <p>Congratulations, you now have Vagrant set up successfully!  In this section,
 I'd just like to note a couple things about using Vagrant.</p>
@@ -254,7 +254,7 @@ web applications in Python using the Flask framework.  If you are starting anoth
 similar project, copy this file to your new project folder as well.</p>
 
 <h3>
-<a name="common-gotchas" class="anchor" href="#common-gotchas"><span class="octicon octicon-link"></span></a>Common Gotchas</h3>
+<a id="common-gotchas" class="anchor" href="#common-gotchas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common Gotchas</h3>
 
 <p>Unfortunately, some people do run into some minor problems with Vagrant.  By
 far the most common problem is the command <code>vagrant up</code> or <code>vagrant halt</code> hanging and running forever.
@@ -281,7 +281,7 @@ the box that you started, and click "Remove".</p>
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Devfest Environment Setup maintained by <a href="https://github.com/squidarth">squidarth</a></p>
+        <p class="copyright">Devfest Environment Setup maintained by <a href="https://github.com/adicu">adicu</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
