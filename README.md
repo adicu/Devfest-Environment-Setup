@@ -126,18 +126,6 @@ Copy `Vagrantfile` and `bootstrap.sh` to a directory in which you would like to 
 
 ![move to devfest](http://squidarth.github.io/static/move_to_devfest-2.png)
 
-
-Now, we'll be passing around a thumb drive with some files on it at this point, if you had the opportunity to grab files off the thumb drive instead of having to download them, here's what you'll need to do to use it with Vagrant:
-
-Open up the file called `Vagrantfile` in any text editor.
-It will look like this:
-
-![vagrantfile original](http://squidarth.github.io/static/original_vagrantfile-2.png)
-
-Move a file called `precise32.box` from the thumb drive to any directory on your computer, and then change the line that reads `config.vm.box_url = "http://files.vagrantup.com/precise32.box"` to point to the `precise32.box` file you got from your computer.
-For example, if you put it in a folder called `~/Downloads`, then, this line should read `config.vm.box_url = "~/Downloads/precise32.box"`.
-If you didn't get a chance to get files from the thumb drive, don't worry about this step and move on.
-
 To start the virtual machine for this project, first move to your project directory, and run the command `vagrant up`.
 
 ![vagrant up](http://squidarth.github.io/static/vagrant_up-2.png)
