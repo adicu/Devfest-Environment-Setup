@@ -1,5 +1,7 @@
 # Devfest Environment Setup
 
+### [Download all necessary files here](https://github.com/adicu/learn-setup/archive/master.zip)
+
 ### Motivation
 
 During Devfest this year, we will be using a piece of software called
@@ -211,22 +213,21 @@ similar project, copy this file to your new project folder as well.
 
 ### Common Gotchas
 
-Unfortunately, some people do run into some minor problems with Vagrant.  By
-far the most common problem is the command `vagrant up` or `vagrant halt` hanging and running forever.
-This usually happens after somebody has put their computer to sleep and has
+- Make sure that you are in the correct directory as you setup Vagrant.  You should be typing `vagrant up` in the same directory that contains `Vagrantfile` and `bootstrap.sh`.  If you've recently downloaded or cloned some code that you want to edit using vagrant, make sure to copy `Vagrantfile` and `bootstrap.sh` into the folder that contains that code, and run `vagrant up` from within there.
+- After installing Git, you may need to restart your terminal. (Just quit Terminal, then reopen it.)
+- If you receive an error message containing a message like "Illegal instruction", you may need to update your Git version.  You can do that by re-downloading Git at [git-scm.com](http://git-scm.com/).
+- Unfortunately, some people do run into some minor problems with Vagrant.  By
+far the most common problem is the command `vagrant up` or `vagrant halt` hanging and running forever. This usually happens after somebody has put their computer to sleep and has
 started the computer again. This can be easily remedied through the following
 couple steps:
-
-`Ctrl-C` to get the current commmand to stop.  Then, type `vagrant suspend` to
+    - `Ctrl-C` to get the current commmand to stop.  Then, type `vagrant suspend` to
 stop the box.  After this, you should be able to type `vagrant reload` to get
 the box working again.
-
-The initial `vagrant up` command might take a while because it needs to download
+    - The initial `vagrant up` command might take a while because it needs to download
 a ~200mb file from the web.  Subsequent `vagrant up`s will not take nearly as
 long.
-
-If nothing is working, another possibility is to destroy the VM altogether
+    - If nothing is working, another possibility is to destroy the VM altogether
 using Virtualbox. To do this, open up VirtualBox on your machine, right-click
 the box that you started, and click "Remove".
-
-![vagrant remove](http://squidarth.github.io/static/virtualbox_remove-2.png)
+        ![vagrant remove](http://squidarth.github.io/static/virtualbox_remove-2.png)
+- If nothing seems to be going right, you might need to restart your computer to complete pending installations.
