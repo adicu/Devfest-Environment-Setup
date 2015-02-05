@@ -11,7 +11,7 @@ Run the following in the root directory:
 
     ./build.sh
 
-This generates `.html` files to be viewed in a browser.
+    This generates `.html` files to be viewed in a browser.
 
 ### Deploying
 
@@ -27,12 +27,15 @@ All solutions are available by section in the `solutions/` folder.
 
 We support running with vagrant!  [Install and setup Vagrant](https://docs.vagrantup.com/v2/installation/index.html), and then:
 
-    $ vagrant up # launches the box
-    $ vagrant ssh # ssh into the box
-    # You are now in the vagrant instance
-    $ cd /vagrant # go to the code
-    $ cd <solutions folder> # Ex: cd webdev-solutions/1.3.2\ Dynamic\ Routes
-    # Run the solution # Ex: python app.py
+```
+$ vagrant up # launches the box
+$ vagrant ssh # ssh into the box
+# You are now in the vagrant instance
+$ cd /vagrant # go to the code
+$ cd <solutions folder>       # Ex: cd webdev-solutions/1.3.2\ Dynamic\ Routes
+# Run the solution
+# Ex: python app.py
+```
 
 #### Directory Structure
 
