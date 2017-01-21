@@ -4,12 +4,9 @@
 
 ### Motivation
 
-During Devfest this year, we will be using a piece of software called Vagrant for our development.
-Vagrant allows users to really easily manage Virtual Machines, which are basically operating systems running on top of your current operating system, which we can use for our own software development.
+Suppose you're using Software X, and it depends on version 1.x of SomeLibrary. Everything's fine until you start working on Project Y, which depends on version 2.x of SomeLibrary. How can you work with both applications when they depend on conflicting pieces of software? How can you avoid creating a mess of your development environment?
 
-Writing code on a virtual machine has a number of advantages over doing so locally on your computer.
-Most importantly, installing software for development is often one of the most frustrating things about getting started.
-We have provisioned a virtual machine with all the software you need--so that regardless of whether you run a PC or a Mac, you can be up and running as soon as you have Vagrant installed.
+Enter !['virtualenv'](https://virtualenv.pypa.io/en/stable/)! `virtualenv` is a tool for creating isolated Python environments - a project depending on Flask v0.8 won't interfere with a project depending on Flask v0.12 when both projects are isolated in virtual environments. We'll be using `virtualenv` during this year's DevFest, enabling us to spend more time on coding and less time on environment setup.
 
 
 ### A Note on Writing Code
@@ -28,6 +25,8 @@ Simply use Spotlight to open it up
 
 The PC equivalent of Terminal is a program called "Command Prompt".
 To open it, click the "Start Menu", navigate to "Accessories", and click "Command Prompt"
+
+![terminal_open](http://www.howtogeek.com/wp-content/uploads/2015/12/650x300xWindows_106-650x300.jpg.pagespeed.gp+jp+jw+pj+js+rj+rp+rw+ri+cp+md.ic.30-jnAYIwf.jpg)
 
 ### Installing Git
 
@@ -59,126 +58,5 @@ You should see the following output:
 
 ![git install](http://squidarth.github.io/static/git_successful_msft.PNG)
 
-### Installing VirtualBox
-
-To make development simpler, we will be doing our development in a Virtual Machine.
-The simplest way to do this is by using a piece of software called [vagrant](http://vagrantup.com).
-The first dependency for Vagrant is VirtualBox. To install this, visit [the VirtualBox website](https://www.virtualbox.org/wiki/Downloads)
-and download the version for your operating system.
-
-![virtualbox page](http://squidarth.github.io/static/virtualbox_downloads-2.png).
-
-Simply go through the installer until it's finished.
-
-![virtualbox installer](http://squidarth.github.io/static/virtualbox_installer-2.png)
-
-### Installing Vagrant
-
-Next, we need to install Vagrant, which is an easy way to manage VirtualBox Virtual Machines.
-To do this, visit the [Vagrant website](http://www.vagrantup.com/downloads.html) and install the appropriate version for your Operating System.
-
-![vagrant website](http://squidarth.github.io/static/vagrant_downloads-2.png)
-
-Once it has been installed, load up your terminal again and type `vagrant`.
-
-You should see the following output:
-
-![vagrant output](http://squidarth.github.io/static/vagrant_output-2.png)
-
-If you see this, then you're ready to start developing!
-
-### Basic Terminal Use
-
-
-The next couple steps will require knowing a few terminal commands.
-The terminal is often called the "Command Line", and we'll be using that terminology for the rest of this short guide.
-In order to execute commands in the command line (which you have already done a couple times), type the command and then hit "enter".
-
-#### Mac
-
-When you are using the command line, you are always in a certain directory.
-To check the directory you are in, simply run `pwd`.
-
-![pwd usage](http://squidarth.github.io/static/pwd_usage-2.png)
-
-To list all the files in the current directory you are in, type the command `ls` (list).
-
-![ls usage](http://squidarth.github.io/static/ls_usage-2.png)
-
-To change directories, type the `cd` command, followed by the name of the directory that you would like to navigate to.
-Note that `~` is the name of your home directory (the directory where your Documents directory is).
-
-![cd usage](http://squidarth.github.io/static/cd_usage-2.png)
-
-#### PC
-
-On PCs, similarly to Mac, in the command prompt, you are always in a certain directory, and the path is listed in your prompt, so you always know what directory you are in.
-
-`cd` is used to change directories, very similarly to how this is done on Macs.
-Note that on PCs, `\` is used in writing out directory paths, rather than the `/` used on Macs.
-
-`dir` is used to list files and directories inside folders.
-
-### Getting started with Vagrant
-
-Now you should be ready to get started using Vagrant to do some web development.
-
-At this top of the page, you should be able to download a zip file that contains three files, `Vagrantfile`, `bootstrap.sh`, and `README.md`.
-Copy `Vagrantfile` and `bootstrap.sh` to a directory in which you would like to start writing code.
-
-![move to devfest](http://squidarth.github.io/static/move_to_devfest-2.png)
-
-To start the virtual machine for this project, first move to your project directory, and run the command `vagrant up`.
-
-![vagrant up](http://squidarth.github.io/static/vagrant_up-2.png)
-
-Once this command finishes executing (it will take a couple minutes), your virtual machine will be ready to use.
-To access the machine, use the command `vagrant ssh`.
-Once this command has finished executing, you will be inside a virtual machine different from your own machine.
-To return to your local machine, simply type the command `exit`.
-
-The special thing about Vagrant is that you have access inside the Virtual Machine to files on your local computer.
-Once inside the Virtual Machine, type
-
-`cd /vagrant`, followed by `ls` (`dir`) on PC, and you'll see that the files in your folder on your computer are available on this virtual machine.
-
-(PC Only) Here is what you should see if you're on a PC:
-
-![vagrant success](http://squidarth.github.io/static/vagrant_success_msft.png)
-
-A couple other important commands to note are `vagrant halt` and `vagrant reload`.
-`vagrant halt` stops the Virtual Machine, while `vagrant reload` restarts it.
-These commands should be your first line of defense if anything seems to be going wrong.
-
-### Remarks on Vagrant Usage (Optional)
-
-Congratulations, you now have Vagrant set up successfully!
-In this section, I'd just like to note a couple things about using Vagrant.
-
-First of all, even though when you are connected to your Vagrant box (what happens after typing `vagrant ssh`), you are on a Virtual Machine, the files in the `/vagrant` folder are actually the same files on your Mac or PC.
-This means that you can edit those files in any text editor you like, and the changes will immediately be reflected in Vagrant.
-
-Second, there are a couple important files that you should be aware of.
-First is the file called `Vagrantfile`.
-This file specifies the configuration of Vagrant box.
-If you would like to use Vagrant in a different project, you can copy this file over to that directory, and then type `vagrant up` in that directory to get started using Vagrant with that new project.
-
-The other file to be aware of is the file called `boostrap.sh`.
-This file is a script that provisions the Vagrant box with software needed to start developing web applications in Python using the Flask framework.
-If you are starting another similar project, copy this file to your new project folder as well.
-
-### Common Gotchas
-
-- Make sure that you are in the correct directory as you setup Vagrant.  You should be typing `vagrant up` in the same directory that contains `Vagrantfile` and `bootstrap.sh`.  If you've recently downloaded or cloned some code that you want to edit using vagrant, make sure to copy `Vagrantfile` and `bootstrap.sh` into the folder that contains that code, and run `vagrant up` from within there.
-- After installing Git, you may need to restart your terminal. (Just quit Terminal, then reopen it.)
-- If you receive an error message containing a message like "Illegal instruction", you may need to update your Git version.  You can do that by re-downloading Git at [git-scm.com](http://git-scm.com/).
-- Unfortunately, some people do run into some minor problems with Vagrant.  By far the most common problem is the command `vagrant up` or `vagrant halt` hanging and running forever. This usually happens after somebody has put their computer to sleep and has started the computer again. This can be easily remedied through the following
-couple steps:
-    - `Ctrl-C` to get the current commmand to stop.  Then, type `vagrant suspend` to stop the box.  After this, you should be able to type `vagrant reload` to get the box working again.
-    - The initial `vagrant up` command might take a while because it needs to download a ~200mb file from the web.  Subsequent `vagrant up`s will not take nearly as long.
-    - If nothing is working, another possibility is to destroy the VM altogether using Virtualbox. To do this, open up VirtualBox on your machine, right-click
-the box that you started, and click "Remove".
-      ![vagrant remove](http://squidarth.github.io/static/virtualbox_remove-2.png)
-
-- If nothing seems to be going right, you might need to restart your computer to complete pending installations.
-
+### Setting up Virtualenv
+Next, we need to install `virtualenv`
