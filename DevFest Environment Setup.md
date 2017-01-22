@@ -41,9 +41,11 @@ To open it, click the "Start Menu", navigate to "Accessories", and click "Comman
 The next few steps will require knowing a few terminal commands. The terms *terminal* and *command line* are often used interchangeably. In order to execute commands on the command line, simply type the command and hit `enter`.
 
 When using the command line, you are always in a certain directory. To check the directory you are in, run the `pwd` command.
+
 ![terminal_pwd](https://i.gyazo.com/060bdb2a6447c9ed686911d64fe0cfe3.png)
 
 To list all the files and directories in the current directory you are in, type the command `ls` (list).If you're on a PC, type the command `dir` (directory) instead.
+
 ![terminal_ls](https://i.gyazo.com/5fd72170a15970c469f31fdc303e83c6.png)
 
 To change directories, type the `cd` command, followed by the name of the directory that you would like to navigate to. On a Mac, `~` is the name of your home directory; on a PC, `C:/Users/<your_account_name>` is usually the name of your home directory.
@@ -92,6 +94,7 @@ If you encounter an error, it's possible that you're not the administrative ("ro
 ### Setting up virtualenv (PC only)
 
 If `pip install virtualenv` didn't work for you, you'll need to do the following:
+
 1. Install ![pip](https://bootstrap.pypa.io/get-pip.py) first. Right-click this link and hit *Save link as*.
 2. Go to your command prompt and navigate to the directory where you saved the `get-pip.py` file: `cd C:\Users\YourName\...\get-pip.py`
 3. Run `python get-pip.py`. This will install `pip` on your computer.
@@ -113,6 +116,7 @@ where `<env_name>` is the name of the directory for which you'd like to set up a
 Note that we're simply using the `source` command to execute a function located in `<env_name>/bin/activate`, so this workflow is equivalent to:
 
 `$ cd <env_name>`
+
 `$ source bin/activate`
 
 Whichever way you decide to activate your virtual environment, you'll notice that the name of your currently activated environment is displayed in parentheses before the terminal prompt:
