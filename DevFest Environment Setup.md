@@ -18,7 +18,11 @@ This guide also assumes that you have Python set up on your computer. You can te
 
 `$ python`
 
-Note that the `$` symbol should not be typed - it's commonly used to represent the terminal prompt, and can be ignored. If the above command gave you an error, you might not have Python installed. You can [download Python here](https://www.python.org/downloads/).
+Note that the `$` symbol should not be typed - it's commonly used to represent the terminal prompt, and can be ignored. If the above command gave you an error, you might not have Python installed. You can [download Python here](https://www.python.org/downloads/). Otherwise, you should receive a prompt similar to the one below:
+
+![python_prompt](https://i.gyazo.com/0e9adbdf1e5943198418a66edf443e9d.png)
+
+Congratulations! Let's move on.
 
 
 ### Opening up Terminal (Mac only)
