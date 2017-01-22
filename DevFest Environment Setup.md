@@ -6,13 +6,20 @@
 
 Suppose you're using Software X, and it depends on version 1.x of SomeLibrary. Everything's fine until you start working on Project Y, which depends on version 2.x of SomeLibrary. How can you work with both applications when they depend on conflicting pieces of software? How can you avoid creating a mess of your development environment?
 
-Enter !['virtualenv'](https://virtualenv.pypa.io/en/stable/)! `virtualenv` is a tool for creating isolated Python environments - a project depending on Flask v0.8 won't interfere with a project depending on Flask v0.12 when both projects are isolated in virtual environments. We'll be using `virtualenv` during this year's DevFest, enabling us to spend more time on coding and less time on environment setup.
+Enter `virtualenv`! `virtualenv` is a tool for creating isolated Python environments. `virtualenv` creates separate development environments with unique installation directories. As a result, a project depending on Flask v0.8 won't interfere with a project depending on Flask v0.12 when both projects are isolated in `virtualenv` virtual environments. We'll be using `virtualenv` during this year's DevFest, enabling us to spend more time on coding and less time on environment setup.
 
 
-### A Note on Writing Code
+### Prerequisites
 
 All programmers have a text editor that they use to write code.
 If you're just getting started, we highly recommend you download and install [Sublime Text](http://www.sublimetext.com/2).
+
+This guide also assumes that you have Python set up on your computer. You can test this by opening up a terminal (as detailed below), then entering the following command:
+
+`$ python`
+
+Note that the `$` symbol should not be typed - it's commonly used to represent the terminal prompt, and can be ignored. If the above command gave you an error, you might not have Python installed. You can ![download Python here](https://www.python.org/downloads/).
+
 
 ### Opening up Terminal (Mac only)
 
@@ -21,12 +28,26 @@ Simply use Spotlight to open it up
 
 ![terminal open](http://squidarth.github.io/static/open_terminal.png)
 
-## Open up Command Prompt (PC only)
+### Opening up Command Prompt (PC only)
 
 The PC equivalent of Terminal is a program called "Command Prompt".
 To open it, click the "Start Menu", navigate to "Accessories", and click "Command Prompt"
 
 ![terminal_open](http://www.howtogeek.com/wp-content/uploads/2015/12/650x300xWindows_106-650x300.jpg.pagespeed.gp+jp+jw+pj+js+rj+rp+rw+ri+cp+md.ic.30-jnAYIwf.jpg)
+
+
+### Basic Terminal Use
+
+The next few steps will require knowing a few terminal commands. The terms *terminal* and *command line* are often used interchangeably. In order to execute commands on the command line, simply type the command and hit `enter`.
+
+When using the command line, you are always in a certain directory. To check the directory you are in, run the `pwd` command.
+![terminal_pwd](https://i.gyazo.com/060bdb2a6447c9ed686911d64fe0cfe3.png)
+
+To list all the files and directories in the current directory you are in, type the command `ls` (list).If you're on a PC, type the command `dir` (directory) instead.
+![terminal_ls](https://i.gyazo.com/5fd72170a15970c469f31fdc303e83c6.png)
+
+To change directories, type the `cd` command, followed by the name of the directory that you would like to navigate to. On a Mac, `~` is the name of your home directory; on a PC, `C:/Users/<your_account_name>` is usually the name of your home directory.
+
 
 ### Installing Git
 
@@ -38,7 +59,7 @@ If git is installed, you should see the following output:
 
 If not, install git from the [git website](http://git-scm.com/downloads), where there are more instructions.
 
-### PC Instructions
+### Installing Git (PC only)
 
 On PCs there are a couple extra steps in installing git that you should be aware of.
 
@@ -58,5 +79,55 @@ You should see the following output:
 
 ![git install](http://squidarth.github.io/static/git_successful_msft.PNG)
 
-### Setting up Virtualenv
-Next, we need to install `virtualenv`
+### Setting up virtualenv
+Next, we need to install `virtualenv`. To do so, enter the following in your command line:
+
+`$ pip install virtualenv`
+
+If you encounter an error, it's possible that you're not the administrative ("root") user on your machine. You may need to invoke this command again with the `sudo` (**su**peruser **do**) keyword:
+
+`$ sudo pip install virtualenv`
+
+
+### Setting up virtualenv (PC only)
+
+If `pip install virtualenv` didn't work for you, you'll need to do the following:
+1. Install ![pip](https://bootstrap.pypa.io/get-pip.py) first. Right-click this link and hit *Save link as*.
+2. Go to your command prompt and navigate to the directory where you saved the `get-pip.py` file: `cd C:\Users\YourName\...\get-pip.py`
+3. Run `python get-pip.py`. This will install `pip` on your computer.
+4. Run `pip install virtualenv` again.
+
+If you run into trouble, flip through ![this more detailed guide](https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation) on `pip` installation for Windows.
+
+
+### How to use virtualenv
+
+Now we're ready to use `virtualenv` to set up our development environments. To place a virtual environment in a directory, simply use the following command:
+
+`$ virtualenv <env_name>`
+
+where `<env_name>` is the name of the directory for which you'd like to set up a virtual environment. Note that a newly created `virtualenv` isn't active until you explicitly invoke it. To begin using your virtual environment, activate it:
+
+`$ source <env_name>/bin/activate`
+
+Note that we're simply using the `source` command to execute a function located in `<env_name>/bin/activate`, so this workflow is equivalent to:
+
+`$ cd <env_name>`
+`$ source bin/activate`
+
+Whichever way you decide to activate your virtual environment, you'll notice that the name of your currently activated environment is displayed in parentheses before the terminal prompt:
+
+![venv_prompt](https://i.gyazo.com/6218dd75ddffdba94ffe3de8e54bd403.png)
+
+To leave your virtual environment (and remove the environment name from your terminal prompt), run:
+
+`$ deactivate`
+
+### How to use virtualenv (PC only)
+
+The `virtualenv <env_name>` syntax remains the same for PC users. The `activate` script, however, is often located in a separate directory on Windows, so you may need to run the following in order to activate a virtual environment:
+
+`$ <env_name>\Scripts\activate`
+
+
+
