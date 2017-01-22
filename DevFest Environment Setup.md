@@ -18,7 +18,7 @@ This guide also assumes that you have Python set up on your computer. You can te
 
 `$ python`
 
-Note that the `$` symbol should not be typed - it's commonly used to represent the terminal prompt, and can be ignored. If the above command gave you an error, you might not have Python installed. You can ![download Python here](https://www.python.org/downloads/).
+Note that the `$` symbol should not be typed - it's commonly used to represent the terminal prompt, and can be ignored. If the above command gave you an error, you might not have Python installed. You can [download Python here](https://www.python.org/downloads/).
 
 
 ### Opening up Terminal (Mac only)
@@ -95,12 +95,12 @@ If you encounter an error, it's possible that you're not the administrative ("ro
 
 If `pip install virtualenv` didn't work for you, you'll need to do the following:
 
-1. Install ![pip](https://bootstrap.pypa.io/get-pip.py) first. Right-click this link and hit *Save link as*.
+1. Install [pip](https://bootstrap.pypa.io/get-pip.py) first. Right-click this link and hit *Save link as*.
 2. Go to your command prompt and navigate to the directory where you saved the `get-pip.py` file: `cd C:\Users\YourName\...\get-pip.py`
 3. Run `python get-pip.py`. This will install `pip` on your computer.
 4. Run `pip install virtualenv` again.
 
-If you run into trouble, flip through ![this more detailed guide](https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation) on `pip` installation for Windows.
+If you run into trouble, flip through [this more detailed guide](https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation) on `pip` installation for Windows.
 
 
 ### How to use virtualenv
@@ -109,7 +109,7 @@ Now we're ready to use `virtualenv` to set up our development environments. To p
 
 `$ virtualenv <env_name>`
 
-where `<env_name>` is the name of the directory for which you'd like to set up a virtual environment. Note that a newly created `virtualenv` isn't active until you explicitly invoke it. To begin using your virtual environment, activate it:
+where `<env_name>` is the name of the directory for which you'd like to set up a virtual environment. If the `<env_name>` directory doesn't exist in your working directory, `virtualenv` will also create it for you. Note that a newly created `virtualenv` isn't active until you explicitly invoke it. To begin using your virtual environment, activate it:
 
 `$ source <env_name>/bin/activate`
 
@@ -119,13 +119,15 @@ Note that we're simply using the `source` command to execute a function located 
 
 `$ source bin/activate`
 
-Whichever way you decide to activate your virtual environment, you'll notice that the name of your currently activated environment is displayed in parentheses before the terminal prompt:
+Whichever way you decide to activate your virtual environment, you'll notice that the name of your currently activated environment is prepended in parentheses before the terminal prompt:
 
 ![venv_prompt](https://i.gyazo.com/6218dd75ddffdba94ffe3de8e54bd403.png)
 
 To leave your virtual environment (and remove the environment name from your terminal prompt), run:
 
 `$ deactivate`
+
+![venv_deactivate](https://i.gyazo.com/ce4535797aaa57dcf12cfb4f929d74c5.png)
 
 ### How to use virtualenv (PC only)
 
@@ -134,4 +136,14 @@ The `virtualenv <env_name>` syntax remains the same for PC users. The `activate`
 `$ <env_name>\Scripts\activate`
 
 
+### Workflow with virtualenv
 
+Let's say you're working on a Flask application, but you don't want to endanger packages used by other software or projects. How can we use `virtualenv` to safely develop our project?
+
+1. Create a virtual environment for your project using `virtualenv <project_name>`.
+2. Activate the virtual environment using `source <env_name>/bin/activate` (or the equivalent Windows command).
+3. Install your packages and dependencies - for example, `pip install Flask`. The `Flask` library is now installed only in the `<project_name>` environment, not globally.
+4. Deactivate your virtual environment using `deactivate` when you're done working on your project.
+
+
+Happy hacking!
