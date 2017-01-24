@@ -154,7 +154,7 @@ Let's say you're working on a Flask application, but you don't want to endanger 
 3. Install your packages and dependencies - for example, `pip install Flask`. The `Flask` library is now installed only in the `<project_name>` environment, not globally.
 4. Deactivate your virtual environment using `deactivate` when you're done working on your project.
 
-What if you team up with a friend, and you want them to be able to recreate your development environment? They'd have to know the exact names and versions of each package used in your project. `pip` makes this easy by enabling you to "freeze" the current state of the packages used in your project:
+__Optionally:__ what if you team up with a friend, and you want them to be able to recreate your development environment? They'd have to know the exact names and versions of each package used in your project. `pip` makes this easy by enabling you to "freeze" the current state of the packages used in your project:
 
 `$ pip freeze > requirements.txt`
 
