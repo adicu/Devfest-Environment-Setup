@@ -14,11 +14,11 @@ Enter `virtualenv`! `virtualenv` is a tool for creating isolated Python environm
 All programmers have a text editor that they use to write code.
 If you're just getting started, we highly recommend you download and install [Sublime Text](http://www.sublimetext.com/2).
 
-This guide also assumes that you have Python set up on your computer. You can test this by opening up a terminal (as detailed below), then entering the following command:
+This guide also assumes that you have Python 2.7 set up on your computer. You can test this by opening up a terminal (as detailed below), then entering the following command:
 
 `$ python`
 
-Note that the `$` symbol should not be typed - it's commonly used to represent the terminal prompt, and can be ignored. If the above command gave you an error, you might not have Python installed. You can [download Python here](https://www.python.org/downloads/). Otherwise, you should receive a prompt similar to the one below:
+Note that the `$` symbol should not be typed - it's commonly used to represent the terminal prompt, and can be ignored. If the above command gave you an error, you might not have Python installed. You can [download Python here](https://www.python.org/downloads/) (go for version 2.7). Otherwise, you should receive a prompt similar to the one below:
 
 ![python_prompt](https://i.gyazo.com/0e9adbdf1e5943198418a66edf443e9d.png)
 
@@ -133,6 +133,11 @@ To leave your virtual environment (and remove the environment name from your ter
 
 ![venv_deactivate](https://i.gyazo.com/ce4535797aaa57dcf12cfb4f929d74c5.png)
 
+Now, you can install packages without them affecting your global installation. Installing the `requests` library exclusively in your virtual environment, for example, is simply
+
+`$ pip install requests`
+
+
 ### How to use virtualenv (PC only)
 
 The `virtualenv <env_name>` syntax remains the same for PC users. The `activate` script, however, is often located in a separate directory on Windows, so you may need to run the following in order to activate a virtual environment:
@@ -149,5 +154,14 @@ Let's say you're working on a Flask application, but you don't want to endanger 
 3. Install your packages and dependencies - for example, `pip install Flask`. The `Flask` library is now installed only in the `<project_name>` environment, not globally.
 4. Deactivate your virtual environment using `deactivate` when you're done working on your project.
 
+__Optionally:__ what if you team up with a friend, and you want them to be able to recreate your development environment? They'd have to know the exact names and versions of each package used in your project. `pip` makes this easy by enabling you to "freeze" the current state of the packages used in your project:
+
+`$ pip freeze > requirements.txt`
+
+By redirecting the output of `pip freeze` into a `requirement.txt` file using the `>` operator, your friend can run the following:
+
+`$ pip install -r requirements.txt`
+
+and all the packages in your project will also be installed in their development environment! These little `virtualenv` and `pip` hacks can go a long way towards optimizing your development workflow. 
 
 Happy hacking!
