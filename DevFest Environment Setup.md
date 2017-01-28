@@ -166,21 +166,21 @@ We should be in our virtual environment, and see its name prepended to the comma
 ```
 (venv) $ cd ~/some/random/directory
 
-[ some development happens ]
+[ ... some development happens ... ]
 
 (venv) $ deactivate
 ```
 
 that's a perfectly valid (and, for projects with large amounts of files, recommended) workflow!
 
-__Optionally:__ what if you team up with a friend, and you want them to be able to recreate your development environment? They'd have to know the exact names and versions of each package used in your project. `pip` makes this easy by enabling you to "freeze" the current state of the packages used in your project:
+> __Optionally:__ what if you team up with a friend, and you want them to be able to recreate your development environment? They'd have to know the exact names and versions of each package used in your project. `pip` makes this easy by enabling you to "freeze" the current state of the packages used in your project:
 
-`$ pip freeze > requirements.txt`
+> `$ pip freeze > requirements.txt`
 
-By redirecting the output of `pip freeze` into a `requirement.txt` file using the `>` operator, your friend can run the following:
+> By redirecting the output of `pip freeze` into a `requirement.txt` file using the `>` operator, your friend can run the following:
 
-`$ pip install -r requirements.txt`
+> `$ pip install -r requirements.txt`
 
-and all the packages in your project will also be installed in their development environment! These little `virtualenv` and `pip` hacks can go a long way towards optimizing your development workflow. 
+> and all the packages in your project will also be installed in their development environment! These little `virtualenv` and `pip` hacks can go a long way towards optimizing your development workflow. 
 
-Happy hacking!
+__Happy hacking!__
