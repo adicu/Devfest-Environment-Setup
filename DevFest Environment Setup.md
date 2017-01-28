@@ -1,6 +1,7 @@
 # Devfest Environment Setup
 
-## [Download all necessary files here](https://github.com/adicu/learn-setup/archive/master.zip)
+[Download all necessary files here](https://github.com/adicu/learn-setup/archive/master.zip)
+
 
 ## Motivation
 
