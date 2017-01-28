@@ -39,7 +39,7 @@ To open it, click the "Start Menu", navigate to "Accessories", and click "Comman
 ![terminal_open](http://www.howtogeek.com/wp-content/uploads/2015/12/650x300xWindows_106-650x300.jpg.pagespeed.gp+jp+jw+pj+js+rj+rp+rw+ri+cp+md.ic.30-jnAYIwf.jpg)
 
 
-### Basic Terminal Use
+## Basic Terminal Use
 
 The next few steps will require knowing a few terminal commands. The terms *terminal* and *command line* are often used interchangeably. In order to execute commands on the command line, simply type the command and hit `enter`.
 
