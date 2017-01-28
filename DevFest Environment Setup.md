@@ -145,7 +145,7 @@ The `virtualenv <env_name>` syntax remains the same for PC users. The `activate`
 `$ <env_name>\Scripts\activate`
 
 
-### Workflow with virtualenv
+### The virtualenv workflow
 
 Let's say you're working on a Flask application, but you don't want to endanger packages used by other software or projects. How can we use `virtualenv` to safely develop our project?
 
@@ -153,6 +153,25 @@ Let's say you're working on a Flask application, but you don't want to endanger 
 2. Activate the virtual environment using `source <env_name>/bin/activate` (or the equivalent Windows command).
 3. Install your packages and dependencies - for example, `pip install Flask`. The `Flask` library is now installed only in the `<project_name>` environment, not globally.
 4. Deactivate your virtual environment using `deactivate` when you're done working on your project.
+
+Note that `virtualenv` creates an instance of the Python interpreter - so you can create files outside of your `virtualenv` directory, but have them run within your virtual environment. For example, let's say we created a virtual environment like so:
+
+```
+$ virtualenv MyProject
+$ source MyProject/bin/activate
+```
+
+We should be in our virtual environment, and see its name prepended to the command prompt. We can create files within our virtual environment, even if they're not located in `MyProject/`:
+
+```
+(venv) $ cd ~/some/random/directory
+
+[ some development happens ]
+
+(venv) $ deactivate
+```
+
+that's a perfectly valid (and, for projects with large amounts of files, recommended) workflow!
 
 __Optionally:__ what if you team up with a friend, and you want them to be able to recreate your development environment? They'd have to know the exact names and versions of each package used in your project. `pip` makes this easy by enabling you to "freeze" the current state of the packages used in your project:
 
