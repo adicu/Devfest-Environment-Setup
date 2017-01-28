@@ -1,15 +1,15 @@
 # Devfest Environment Setup
 
-### [Download all necessary files here](https://github.com/adicu/learn-setup/archive/master.zip)
+## [Download all necessary files here](https://github.com/adicu/learn-setup/archive/master.zip)
 
-### Motivation
+## Motivation
 
 Suppose you're using Software X, and it depends on version 1.x of SomeLibrary. Everything's fine until you start working on Project Y, which depends on version 2.x of SomeLibrary. How can you work with both applications when they depend on conflicting pieces of software? How can you avoid creating a mess of your development environment?
 
 Enter `virtualenv`! `virtualenv` is a tool for creating isolated Python environments. `virtualenv` creates separate development environments with unique installation directories. As a result, a project depending on Flask v0.8 won't interfere with a project depending on Flask v0.12 when both projects are isolated in `virtualenv` virtual environments. We'll be using `virtualenv` during this year's DevFest, enabling us to spend more time on coding and less time on environment setup.
 
 
-### Prerequisites
+## Prerequisites
 
 All programmers have a text editor that they use to write code.
 If you're just getting started, we highly recommend you download and install [Sublime Text](http://www.sublimetext.com/2).
@@ -25,14 +25,14 @@ Note that the `$` symbol should not be typed - it's commonly used to represent t
 Congratulations! Let's move on.
 
 
-### Opening up Terminal (Mac only)
+## Opening up Terminal (Mac only)
 
 Terminal is going to be where most of our development-related software will be running.
 Simply use Spotlight to open it up
 
 ![terminal open](http://squidarth.github.io/static/open_terminal.png)
 
-### Opening up Command Prompt (PC only)
+## Opening up Command Prompt (PC only)
 
 The PC equivalent of Terminal is a program called "Command Prompt".
 To open it, click the "Start Menu", navigate to "Accessories", and click "Command Prompt"
@@ -55,7 +55,7 @@ To list all the files and directories in the current directory you are in, type 
 To change directories, type the `cd` command, followed by the name of the directory that you would like to navigate to. On a Mac, `~` is the name of your home directory; on a PC, `C:/Users/<your_account_name>` is usually the name of your home directory.
 
 
-### Installing Git
+## Installing Git
 
 Git is necessary on both Mac and PC to get environments set up.
 First, check if it has been installed already by loading up Terminal and typing `git`, followed by hitting ENTER.
@@ -65,7 +65,7 @@ If git is installed, you should see the following output:
 
 If not, install git from the [git website](http://git-scm.com/downloads), where there are more instructions.
 
-### Installing Git (PC only)
+## Installing Git (PC only)
 
 On PCs there are a couple extra steps in installing git that you should be aware of.
 
@@ -85,7 +85,7 @@ You should see the following output:
 
 ![git install](http://squidarth.github.io/static/git_successful_msft.PNG)
 
-### Setting up virtualenv
+## Setting up virtualenv
 Next, we need to install `virtualenv`. To do so, enter the following in your command line:
 
 `$ pip install virtualenv`
@@ -95,7 +95,7 @@ If you encounter an error, it's possible that you're not the administrative ("ro
 `$ sudo pip install virtualenv`
 
 
-### Setting up virtualenv (PC only)
+## Setting up virtualenv (PC only)
 
 If `pip install virtualenv` didn't work for you, you'll need to do the following:
 
@@ -107,7 +107,7 @@ If `pip install virtualenv` didn't work for you, you'll need to do the following
 If you run into trouble, flip through [this more detailed guide](https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation) on `pip` installation for Windows.
 
 
-### How to use virtualenv
+## How to use virtualenv
 
 Now we're ready to use `virtualenv` to set up our development environments. To place a virtual environment in a directory, simply use the following command:
 
@@ -138,14 +138,14 @@ Now, you can install packages without them affecting your global installation. I
 `$ pip install requests`
 
 
-### How to use virtualenv (PC only)
+## How to use virtualenv (PC only)
 
 The `virtualenv <env_name>` syntax remains the same for PC users. The `activate` script, however, is often located in a separate directory on Windows, so you may need to run the following in order to activate a virtual environment:
 
 `$ <env_name>\Scripts\activate`
 
 
-### The virtualenv workflow
+## Workflow with virtualenv
 
 Let's say you're working on a Flask application, but you don't want to endanger packages used by other software or projects. How can we use `virtualenv` to safely develop our project?
 
@@ -173,14 +173,17 @@ We should be in our virtual environment, and see its name prepended to the comma
 
 that's a perfectly valid (and, for projects with large amounts of files, recommended) workflow!
 
-> __Optionally:__ what if you team up with a friend, and you want them to be able to recreate your development environment? They'd have to know the exact names and versions of each package used in your project. `pip` makes this easy by enabling you to "freeze" the current state of the packages used in your project:
 
-> `$ pip freeze > requirements.txt`
+## Footnote about packages and pip
 
-> By redirecting the output of `pip freeze` into a `requirement.txt` file using the `>` operator, your friend can run the following:
+__Optionally:__ what if you team up with a friend, and you want them to be able to recreate your development environment? They'd have to know the exact names and versions of each package used in your project. `pip` makes this easy by enabling you to "freeze" the current state of the packages used in your project:
 
-> `$ pip install -r requirements.txt`
+`$ pip freeze > requirements.txt`
 
-> and all the packages in your project will also be installed in their development environment! These little `virtualenv` and `pip` hacks can go a long way towards optimizing your development workflow. 
+By redirecting the output of `pip freeze` into a `requirements.txt` file using the `>` operator, your friend can run the following:
+
+`$ pip install -r requirements.txt`
+
+and all the packages in your project will also be installed in their development environment! These little `virtualenv` and `pip` hacks can go a long way towards optimizing your development workflow. 
 
 __Happy hacking!__
