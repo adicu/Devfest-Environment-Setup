@@ -148,9 +148,9 @@ The `virtualenv <env_name>` syntax remains the same for PC users. The `activate`
 
 Let's say you're working on a Flask application, but you don't want to endanger packages used by other software or projects. How can we use `virtualenv` to safely develop our project?
 
-1. Create a virtual environment for your project using `virtualenv <project_name>`.
+1. Create a virtual environment for your project using `virtualenv <env_name>`.
 2. Activate the virtual environment using `source <env_name>/bin/activate` (or the equivalent Windows command).
-3. Install your packages and dependencies - for example, `pip install Flask`. The `Flask` library is now installed only in the `<project_name>` environment, not globally.
+3. Install your packages and dependencies - for example, `pip install Flask`. The `Flask` library is now installed only in the `<env_name>` environment, not globally.
 4. Deactivate your virtual environment using `deactivate` when you're done working on your project.
 
 Note that `virtualenv` creates an instance of the Python interpreter - so you can create files outside of your `virtualenv` directory, but have them run within your virtual environment. For example, let's say we created a virtual environment like so:
